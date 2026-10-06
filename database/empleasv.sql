@@ -38,7 +38,19 @@ CREATE TABLE IF NOT EXISTS oferta_empleo (
         ON DELETE RESTRICT
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+-- ------------------------------------------------------------
+-- Tabla: suario
+-- ------------------------------------------------------------
 
+CREATE TABLE IF NOT EXISTS usuario (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(100) NOT NULL,
+    apellido VARCHAR(100) NOT NULL,
+    email VARCHAR(150) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL,
+    rol VARCHAR(30) NOT NULL DEFAULT 'CANDIDATO',
+    fecha_registro DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
 -- ------------------------------------------------------------
 -- Datos de prueba: empresas
 -- ------------------------------------------------------------
